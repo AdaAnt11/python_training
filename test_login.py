@@ -1,11 +1,10 @@
-
 from selenium import webdriver
 driver = webdriver.Firefox()
+from session import login, open_home_page
 
-driver.get("http://www.uchi.ru")
 
-driver.find_element_by_id('login').send_keys(22)
-driver.find_element_by_id('password').send_keys('космос')
-driver.find_element_by_class_name('login-form__submit').click()
+open_home_page()
+
+login(login=22, password='космос')
 
 driver.close()
